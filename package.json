@@ -1,0 +1,47 @@
+{
+  "name": "@alexaivars/get-in",
+  "version": "1.0.0",
+  "description": "Get a value from object by path",
+  "main": "index.js",
+  "repository": "https://github.com/alexaivars/getIn",
+  "author": "Alexander Aivars <alex@aivars.se>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "jest test ./",
+    "test-ci": "jest test ./ && codecov"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|json|css|scss|md)": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "*.js",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "html",
+      "lcov"
+    ]
+  },
+  "devDependencies": {
+    "jest": "23.5.0",
+    "lint-staged": "7.2.2",
+    "prettier-eslint": "8.8.2",
+    "codecov": "3.0.4"
+  }
+}
