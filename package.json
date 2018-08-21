@@ -4,6 +4,16 @@
   "description": "Get a value from object by path",
   "main": "index.js",
   "repository": "https://github.com/alexaivars/getIn",
+  "keywords": [
+    "access",
+    "associative",
+    "deep",
+    "nested",
+    "object",
+    "property",
+    "undefined",
+    "standalone"
+  ],
   "author": "Alexander Aivars <alex@aivars.se>",
   "license": "MIT",
   "scripts": {
