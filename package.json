@@ -1,8 +1,11 @@
 {
   "name": "@alexaivars/get-in",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Get a value from object by path",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": "https://github.com/alexaivars/getIn",
   "keywords": [
     "access",

@@ -7,7 +7,7 @@ or defaultValue if this is provided.
 
 ## Installation
 
-`yarn add getin`
+`yarn add @alexaivars/get-in`
 
 ## Usage
 
@@ -23,7 +23,7 @@ const context = {
 
 console.log(getIn(context, ["foo", "bar", "baz"])); // waldo
 console.log(getIn(context, ["foo", "quux"])); // undefined
-console.log(getIn(context, ["foo", "quux"], false)); // false
+console.log(getIn(context, ["foo", "quux"], "notSetValue")); // "notSetValue"
 ```
 
 ## Tests

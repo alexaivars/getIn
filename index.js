@@ -1,23 +1,21 @@
-function getIn(context, path, defaultValue) {
+function getIn(context, path, notSetValue) {
   if (!context) {
-    return defaultValue || context;
+    return notSetValue || context;
   }
 
   if (!path) {
-    return defaultValue;
+    return notSetValue;
   }
 
-  return (
-    []
-      .concat(path)
-      .reduce(
-        (obj, key) =>
-          obj && Object.prototype.hasOwnProperty.call(obj, key)
-            ? obj[key]
-            : null,
-        context
-      ) || defaultValue
-  );
+  return value = []
+    .concat(path)
+    .reduce(
+      (obj, key) =>
+        obj && Object.prototype.hasOwnProperty.call(obj, key)
+          ? obj[key]
+          : notSetValue,
+      context
+    );
 }
 
 module.exports = getIn;

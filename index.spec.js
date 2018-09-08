@@ -9,7 +9,13 @@ describe("getIn", () => {
       qux: null
     },
     quux: "corge",
-    17: "prime"
+    17: "prime",
+    falsy: {
+      num: 0,
+      val: false,
+      obj: undefined,
+      nul: null,
+    }
   };
 
   it("returns value in object by Array path", () => {
@@ -28,16 +34,8 @@ describe("getIn", () => {
     expect(getIn(context, ["foo", "xyzzy", "baz"])).toBe(undefined);
   });
 
-  it("returns undefined if part of path is null", () => {
-    expect(getIn(context, ["foo", "qux"])).toBe(undefined);
-  });
-
-  it("returns defaultValue if part of path is undefined", () => {
+  it("returns notSetValue if part of path is undefined", () => {
     expect(getIn(context, ["foo", "xyzzy", "baz"], "thud")).toBe("thud");
-  });
-
-  it("returns defaultValue if part of path is null", () => {
-    expect(getIn(context, ["foo", "qux"], "thud")).toBe("thud");
   });
 
   it("returns context if context is falsy", () => {
@@ -45,7 +43,7 @@ describe("getIn", () => {
     expect(getIn(context, ["foo", "bar"])).toBe(null);
   });
 
-  it("returns defaultValue if context is falsy", () => {
+  it("returns notSetValue if context is falsy", () => {
     const context = null;
     expect(getIn(context, ["foo", "bar"], "waldo")).toBe("waldo");
   });
@@ -60,7 +58,15 @@ describe("getIn", () => {
     expect(getIn(context, null)).toBe(undefined);
   });
 
-  it("returns defaultValue if path is falsy", () => {
+  it("returns notSetValue if path is falsy", () => {
     expect(getIn(context, null, "bar")).toBe("bar");
   });
+
+  it("returns value if value is falsy", () => {
+    expect(getIn(context, ["falsy", "num"], "waldo")).toBe(0);
+    expect(getIn(context, ["falsy", "obj"], "waldo")).toBe(undefined);
+    expect(getIn(context, ["falsy", "val"], "waldo")).toBe(false);
+    expect(getIn(context, ["falsy", "nul"], "waldo")).toBe(null);
+  });
+
 });
