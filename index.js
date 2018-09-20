@@ -7,15 +7,11 @@ function getIn(context, path, notSetValue) {
     return notSetValue;
   }
 
-  return value = []
-    .concat(path)
-    .reduce(
-      (obj, key) =>
-        obj && Object.prototype.hasOwnProperty.call(obj, key)
-          ? obj[key]
-          : notSetValue,
-      context
-    );
+  return (value = [].concat(path).reduce(function(obj, key) {
+    return obj && Object.prototype.hasOwnProperty.call(obj, key)
+      ? obj[key]
+      : notSetValue;
+  }, context));
 }
 
 module.exports = getIn;
