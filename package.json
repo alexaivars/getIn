@@ -55,6 +55,6 @@
     "jest": "23.5.0",
     "lint-staged": "8.1.6",
     "prettier-eslint": "8.8.2",
-    "codecov": "3.4.0"
+    "codecov": "3.5.0"
   }
 }
