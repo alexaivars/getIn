@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "jest": "24.9.0",
-    "lint-staged": "9.2.5",
+    "lint-staged": "9.4.0",
     "prettier-eslint": "9.0.0",
     "codecov": "3.5.0"
   }
