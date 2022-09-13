@@ -1,6 +1,6 @@
 {
   "name": "@alexaivars/get-in",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Get a value from object by path",
   "main": "index.js",
   "files": [
@@ -52,9 +52,9 @@
     ]
   },
   "devDependencies": {
-    "jest": "25.2.7",
-    "lint-staged": "10.5.4",
-    "prettier-eslint": "9.0.1",
-    "codecov": "3.7.1"
+    "codecov": "3.8.3",
+    "jest": "29.0.3",
+    "lint-staged": "13.0.3",
+    "prettier-eslint": "15.0.1"
   }
 }
